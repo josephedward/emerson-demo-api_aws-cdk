@@ -9,7 +9,5 @@ export class EmersonDemoStack extends Stack {
 
     new ssm_service.SsmService(this, 'SSM-Params');
 
-    new api_gateway_service.ApiGatewayService(this, 'ApiGateway');
-
   }
 }
