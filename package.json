@@ -16,21 +16,23 @@
     "build:api:lambda1": "cd api/nest-lambda-1 && npm run build",
     "build:api:lambda2": "cd api/nest-lambda-2 && npm run build",
     "build:api": "npm run build:api:lambda1 && npm run build:api:lambda2",
-    "build": "cdk bootstrap && run build:api",
-    "deploy": "npm run bootstrap && cdk deploy"
+    "build": "npm run deps && npm run build:api",
+    "deploy": "npm run build && cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
     "@types/node": "10.17.27",
     "@types/prettier": "2.6.0",
-    "aws-cdk": "2.25.0",
+    "aws-cdk": "^2.25.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-apigatewayv2-integrations": "^1.157.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.25.0-alpha.0",
+    "@aws-cdk/core": "^1.157.0",
     "aws-cdk-lib": "2.25.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"

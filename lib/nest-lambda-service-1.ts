@@ -23,6 +23,6 @@ export class NestLambdaService1 extends Construct {
     layers: [this.nodeLayer],
     environment: {
       NODE_PATH: "$NODE_PATH:/opt",
-    },
+    }  
   });
 }
